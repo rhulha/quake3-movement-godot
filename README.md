@@ -11,5 +11,5 @@ The port was done for me by dead_lucky_32 on Fiverr:
 https://www.fiverr.com/dead_lucky_32
 
 It doesn't feel exactly like Quake3 yet, but it is a great starting point for further tweaks.
-Pull requests are very wellcome.
+Pull requests are very welcome.
 
