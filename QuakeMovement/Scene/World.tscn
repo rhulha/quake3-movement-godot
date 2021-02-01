@@ -1,0 +1,307 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/floor.jpg" type="Texture" id=2]
+
+[sub_resource type="PrismMesh" id=1]
+left_to_right = 0.0
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, 1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 110.588, 11, 0.69 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.145098, 0.188235, 0.219608, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="World" type="Spatial"]
+
+[node name="Buidling Blocks" type="Spatial" parent="."]
+
+[node name="Ramp" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Ramp"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Ramp/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Ramp2" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2 )
+mesh = SubResource( 1 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Ramp2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Ramp2/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Ramp3" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Ramp3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Ramp3/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Ramp4" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 2 )
+mesh = SubResource( 1 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Ramp4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Ramp4/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Block" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Block"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Block/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Buidling Blocks/Block/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Block7" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Block7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Block7/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Buidling Blocks/Block7/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Block5" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Block5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Block5/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Buidling Blocks/Block5/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Block3" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 2 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Block3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Block3/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Buidling Blocks/Block3/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Block8" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Block8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Block8/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Buidling Blocks/Block8/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Block6" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 2 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Block6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Block6/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Buidling Blocks/Block6/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Block2" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Block2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Block2/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Block4" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 2 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Block4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Block4/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Half Block" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.4, -17, 1, 0.5 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Half Block"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Half Block/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Half Block2" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.4, -17, 1, 1 )
+mesh = SubResource( 3 )
+material/0 = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Half Block2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Half Block2/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Ground" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 180, 0, 0, 0, 1, 0, 0, 0, 30, -151.3, -1, -1 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Ground"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Ground/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="Wall" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 200, 0, 0, 0, 10, 0, 0, 0, 1, -154.4, 5.7, 29 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Wall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Wall/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="Wall2" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( 200, 0, 0, 0, 10, 0, 0, 0, 1, -154.4, 5.7, -29.6 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Wall2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Wall2/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="Wall3" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( -8.74228e-06, 0, 1, 0, 10, 0, -200, 0, -4.37114e-08, 26, 5.7, -3.90001 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Wall3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Wall3/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="Wall5" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( -8.74228e-06, 0, 1, 0, 10, 0, -200, 0, -4.37114e-08, 26, 5.7, -3.90001 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Wall5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Wall5/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="Wall4" type="MeshInstance" parent="Buidling Blocks"]
+transform = Transform( -8.74228e-06, 0, 1, 0, 10, 0, -200, 0, -4.37114e-08, -322.5, 5.7, -3.90001 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Buidling Blocks/Wall4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Buidling Blocks/Wall4/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7, 0.1, 0 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5934, 7.19093, 0 )

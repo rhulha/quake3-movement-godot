@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Character/Quake3-movement-3.gd" type="Script" id=1]
+[ext_resource path="res://Character/jump1.wav" type="AudioStream" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 1.5
+
+[sub_resource type="CapsuleMesh" id=2]
+radius = 0.5
+mid_height = 1.5
+
+[sub_resource type="CylinderShape" id=3]
+radius = 0.5
+height = 1.0
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+headPath = NodePath("Head")
+speedReadout = NodePath("Control/readSpeed")
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+current = true
+
+[node name="Body" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 1.2, 0 )
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, -1.1921e-07, 0, 1.1921e-07, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.450034, 0 )
+shape = SubResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 459.0
+margin_bottom = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="Label" parent="Control"]
+margin_right = 81.0
+margin_bottom = 22.0
+text = "Speed: "
+
+[node name="readSpeed" type="Label" parent="Control"]
+margin_left = 45.0
+margin_top = 1.0
+margin_right = 250.0
+margin_bottom = 78.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
