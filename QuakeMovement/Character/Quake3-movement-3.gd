@@ -15,8 +15,6 @@ export var runDeacceleration      : float = 10    # Deacceleration that occurs w
 export var airAcceleration        : float = 2.0   # Air accel
 export var airDeacceleration      : float = 2.0   # Deacceleration experienced when opposite strafing
 export var airControl             : float = 0.3   # How precise air control is
-export var sideStrafeAcceleration : float = 50    # How fast acceleration occurs to get up to sideStrafeSpeed when side strafing
-export var sideStrafeSpeed        : float = 1     # What the max speed to generate when side strafing
 export var jumpSpeed              : float = 8.0   # The speed at which the characters up axis gains when hitting jump
 export var holdJumpToBhop         : bool = true  # When enabled allows player to just hold jump button to keep on bhopping perfectly
 var playerFriction         : float = 0.0
@@ -60,7 +58,7 @@ func _physics_process(delta):
 	else:
 		AirMove()
 	
-	#This will move teh player
+	#This will move the player
 	move_and_slide(playerVelocity, Vector3.UP)
 	
 	#Show the players current speed
@@ -86,7 +84,7 @@ func QueueJump():
 func AirMove():
 	#Allows for movement to slightly increase as you move through the air
 	var wishdir : Vector3
-	var wishvel : float = airAcceleration
+	#var wishvel : float = airAcceleration
 	var accel : float
 	
 	set_cmd()
@@ -105,12 +103,7 @@ func AirMove():
 	else:
 		accel = airAcceleration
 	
-	if Cmd.forwardmove.length() == 0 && Cmd.rightmove.length() != 0:
-		if wishspeed > sideStrafeSpeed:
-			wishspeed = sideStrafeSpeed
-		accel = sideStrafeAcceleration
-	
-	accelerate(wishdir, wishspeed, runAcceleration);
+	accelerate(wishdir, wishspeed, airAcceleration); # accel
 	
 	playerVelocity.y -= gravity * deltaTime
 
